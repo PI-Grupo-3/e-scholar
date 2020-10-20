@@ -2,18 +2,16 @@ import React from 'react';
 
 import { Container, Row, Col, Button, CardHeader, Card } from "reactstrap";
 
-import AdminNavbar from '../../../components/Navbars/AdminNavbar'
-import AuthFooter from "../../../components/Footers/AuthFooter.js";
 
 export default function Home() {
   return (
     <>
-      <Container fluid>
+      <Container fluid className="mb-5">
         <Row className="align-items-center pt-8 pb-8" style={{background: '#F3F6FA'}}>
-          <Col md="6" >
-            <Card style={{height: 512, width: 635, background: '#EFF3F9'}}/> 
+          <Col md={6} style={{ background: '#EFF3F9'}} sm={12}>
+            
           </Col>
-          <Col md="6">
+          <Col md={6} sm={12}>
             <h3 className="text-primary mb-3">
               Sobre nós
             </h3>
@@ -21,37 +19,39 @@ export default function Home() {
               E-SCHOLAR
             </h1>
             <div className="mb-5 h4 text-light ls-1">              
-              Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te. Ex duo eripuit mentitum.
+              Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, 
+              nam no suscipit quaerendum. At nam minimum ponderum. 
+              Est audiam animal molestiae te. Ex duo eripuit mentitum.
             </div>
             <Button color="primary" outline type="button">Contato</Button>
           </Col>
         </Row>
          
-        <Col md="12" className="bg-secondary pr-8 pl-8">
-          <h3>Disciplinas</h3>
+        <Col className="bg-secondary">
+        <div style={{ marginLeft: 20, marginTop: 20 }}>
+          <h1 style={{ color: "#828282", fontWeight: "bold", fontSize: 20 }}>
+            Disciplinas
+          </h1>
+        </div>
           {Array(4).fill().map(() => (
-            <Row className="pt-6 pb-6 align-items-center" >
-              <Col md="4" >
-                <div className="card-profile-image">
-                  <img
-                    alt="..."
-                    className="square"
-                    src={require("assets/img/theme/team-4-800x800.jpg")}
-                  />
-                </div>
+            <Row className="pt-6 pb-6 justify-content-center align-items-center">
+              <Col lg="3" md="6">
+                <img
+                  alt="disciplina"
+                  style={{ width: 200, height: 200}}
+                  src={require("assets/img/theme/team-4-800x800.jpg")}
+                />
               </Col>  
-              <Col md="8" className="d-flex justify-content-around flex-column">
-                <div className="text-justify">
-                  <h2>Lingua Portuguesa Concordância e Pontuação</h2>
-                </div>
-                <Row className="d-flex justify-content-around mt-4">
-                  <Col md="4">
+              <Col lg="6" md="6">
+                <h2>Lingua Portuguesa Concordância e Pontuação</h2>
+                <Row>
+                  <Col>
                     <i className="ni ni-air-baloon text-blue"></i>
                     <h4 className="text-light">
                       Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.
                     </h4>
                   </Col>
-                  <Col md="4">
+                  <Col>
                     <i className="ni ni-air-baloon text-blue"></i>
                     <h4 className="text-light">
                       Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.
@@ -59,7 +59,7 @@ export default function Home() {
                   </Col>
                 </Row>
               </Col> 
-           </Row> 
+            </Row> 
           ))}          
         </Col>           
       </Container>
