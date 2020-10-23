@@ -1,9 +1,9 @@
 import Home from "views/pages/Home";
-import WishList from "views/pages/WishList"
-import MinhasDisciplinas from "views/pages/MinhasDisciplinas"
-import HistCompras from "views/pages/HistCompras"
+import WishList from "views/pages/WishList";
+import MinhasDisciplinas from "views/pages/MinhasDisciplinas";
+import HistCompras from "views/pages/HistCompras";
 
-var routes = [
+const routes = [
   {
     collapse: true,
     name: "Examples",
@@ -12,29 +12,29 @@ var routes = [
     views: [
       {
         path: "/home",
-        name: "Página principal",        
+        name: "Página principal",
         component: Home,
-        layout: "/auth"
-      }, 
+        layout: "/auth",
+      },
       {
         path: "/wishlist",
-        name: "Lista de desejo",        
+        name: "Lista de desejo",
         component: WishList,
-        layout: "/auth"
-      }, 
+        layout: "/auth",
+      },
       {
         path: "/mydiscipline",
-        name: "Minhas Disciplinas",        
+        name: "Minhas Disciplinas",
         component: MinhasDisciplinas,
-        layout: "/auth"
-      }, 
+        layout: "/auth",
+      },
       {
         path: "/hist",
-        name: "Histórico de compras",        
+        name: "Histórico de compras",
         component: HistCompras,
-        layout: "/auth"
-      }, 
+        layout: "/auth",
+      },
     ],
-  }
+  },
 ];
 export default routes;

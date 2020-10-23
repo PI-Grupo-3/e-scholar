@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 // reactstrap components
 import {
@@ -17,11 +17,10 @@ import {
   Modal,
 } from "reactstrap";
 
-import ModalLogin from "../../components/Utils/ModalLogin";
+import ModalLogin from "../Utils/ModalLogin";
 
 export default function AdminNavbar() {
-  
-  const [auth_user, setAuthUser] = useState("");
+  const [authUser, setAuthUser] = useState("");
   const [token, setToken] = useState("");
   const [dropdownOpen, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -36,14 +35,15 @@ export default function AdminNavbar() {
   async function handleLogin(redirect) {
     setPath(redirect);
     setModal(!modal);
+    setToken();
+    setAuthUser();
   }
 
   function getActiveItem(path) {
     if (window.location.pathname === path) {
       return "navbar active";
-    } else {
-      return "navbar";
     }
+    return "navbar";
   }
 
   async function logout() {
@@ -62,14 +62,21 @@ export default function AdminNavbar() {
         className="d-flex"
       >
         <Container className="d-flex">
-          <NavbarBrand to="/" tag={Link} style={{ cursor: 'pointer' }}>
-            <img alt="..." src={require("assets/img/logo.png")} style={{height: 60}} />
+          <NavbarBrand to="/" tag={Link} style={{ cursor: "pointer" }}>
+            <img alt="..." src={require("assets/img/logo.png")} style={{ height: 60 }} />
           </NavbarBrand>
           <NavbarToggler onClick={toggle2} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <Link to={"/auth/mydiscipline"}>
+                <Link to="/">
+                  <span className={getActiveItem("/")}>
+                    Página Inicial
+                  </span>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/auth/mydiscipline">
                   <span className={getActiveItem("/auth/mydiscipline")}>
                     Minhas Disciplinas
                   </span>
@@ -77,25 +84,24 @@ export default function AdminNavbar() {
               </NavItem>
               {token ? (
                 <NavItem>
-                  <Link to={"/auth/wishlist"}>
+                  <Link to="/auth/wishlist">
                     <span className={getActiveItem("/auth/wishlist")}>
                       Lista de Desejo
                     </span>
                   </Link>
                 </NavItem>
               ) : (
-                  <NavItem>
-                    <span
-                      className={getActiveItem("/auth/wishlist")}
-                      style={{ cursor: "pointer" }}
-                      // onClick={() => handleLogin("/auth/wishlist")}
-                    >
-                      Lista de Desejo
+                <NavItem>
+                  <span
+                    className={getActiveItem("/auth/wishlist")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Lista de Desejo
                   </span>
-                  </NavItem>
-                )}
+                </NavItem>
+              )}
               <NavItem>
-                <Link to={"/auth/throw"}>
+                <Link to="/auth/throw">
                   <span className={getActiveItem("/auth/throw")}>
                     Perfil
                   </span>
@@ -119,20 +125,23 @@ export default function AdminNavbar() {
                         backgroundColor: "#fdbd5c",
                       }}
                     >
-                      Olá, {auth_user} &nbsp;
+                      Olá,
+                      {" "}
+                      {authUser}
+                      {" "}
+&nbsp;
                     </DropdownToggle>
                     <DropdownMenu right className="text-center shadow-sm">
                       <DropdownItem
-                        style={{ cursor: 'pointer' }}
+                        style={{ cursor: "pointer" }}
                         onClick={() => history.push("/auth/myprofile")}
-                        style={{ cursor: 'pointer' }}
                       >
                         <div style={{ fontWeight: 575, color: "#505051" }}>
                           Meu Perfil
                         </div>
                       </DropdownItem>
                       <DropdownItem
-                        style={{ cursor: 'pointer' }}
+                        style={{ cursor: "pointer" }}
                         onClick={() => history.push("/auth/myadverts")}
                       >
                         <div style={{ fontWeight: 575, color: "#505051" }}>
@@ -140,15 +149,15 @@ export default function AdminNavbar() {
                         </div>
                       </DropdownItem>
                       <DropdownItem
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => history.push("/auth/mythrow")} 
+                        style={{ cursor: "pointer" }}
+                        onClick={() => history.push("/auth/mythrow")}
                       >
                         <div style={{ fontWeight: 575, color: "#505051" }}>
                           Meus Lances
                         </div>
                       </DropdownItem>
                       <DropdownItem
-                        style={{ cursor: 'pointer' }}
+                        style={{ cursor: "pointer" }}
                         onClick={() => history.push("/auth/wishlist")}
                       >
                         <div style={{ fontWeight: 575, color: "#3C64B1" }}>
@@ -167,26 +176,26 @@ export default function AdminNavbar() {
                         </div>
                       </DropdownItem>
                     </DropdownMenu>
-                  </ButtonDropdown>                  
+                  </ButtonDropdown>
                 </NavItem>
-              ) : (  
-                  <NavItem>
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      onClick={() => history.push("/auth/login")}
-                      style={{
-                        backgroundColor: "#3C64B1",
-                        border: 0,
-                        color: "#fff",
-                      }}
-                    >
-                      <span className="nav-link-inner--text">ENTRAR</span>
-                    </Button>
-                  </NavItem>
-                )}
+              ) : (
+                <NavItem>
+                  <Button
+                    className="btn-neutral btn-icon"
+                    color="default"
+                    onClick={() => history.push("/auth/login")}
+                    style={{
+                      backgroundColor: "#3C64B1",
+                      border: 0,
+                      color: "#fff",
+                    }}
+                  >
+                    <span className="nav-link-inner--text">ENTRAR</span>
+                  </Button>
+                </NavItem>
+              )}
             </Nav>
-          </Collapse>            
+          </Collapse>
         </Container>
       </Navbar>
       <Modal
@@ -204,7 +213,7 @@ export default function AdminNavbar() {
             type="button"
             onClick={() => handleLogin()}
           >
-            <span aria-hidden={true}>×</span>
+            <span aria-hidden>×</span>
           </button>
         </div>
         <ModalLogin path={path} />
@@ -212,4 +221,3 @@ export default function AdminNavbar() {
     </>
   );
 }
-
