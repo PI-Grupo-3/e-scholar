@@ -11,10 +11,11 @@ export default function Home() {
   const Teste = [ 1 , 2 ,3, 4]
   useEffect(() => {
     setArray(Teste);
-  }, [Teste])
+  }, [])
 
   const history = useHistory();
   return (
+    console.log('teste'),
     <>
       <Container fluid className="mb-5">
         <Row className="align-items-center pt-8 pb-8" style={{background: '#F3F6FA'}}>

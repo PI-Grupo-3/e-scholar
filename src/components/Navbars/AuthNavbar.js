@@ -69,37 +69,37 @@ export default function AdminNavbar() {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <a onClick={() => history.push("/auth/search")}>
-                  <span className={getActiveItem("/auth/search")}>
+                <Link to={"/auth/mydiscipline"}>
+                  <span className={getActiveItem("/auth/mydiscipline")}>
                     Minhas Disciplinas
                   </span>
-                </a>
+                </Link>
               </NavItem>
               {token ? (
                 <NavItem>
-                  <a onClick={() => history.push("/auth/anunciar")}>
-                    <span className={getActiveItem("/auth/anunciar")}>
+                  <Link to={"/auth/wishlist"}>
+                    <span className={getActiveItem("/auth/wishlist")}>
                       Lista de Desejo
                     </span>
-                  </a>
+                  </Link>
                 </NavItem>
               ) : (
                   <NavItem>
                     <span
-                      className={getActiveItem("/auth/anunciar")}
+                      className={getActiveItem("/auth/wishlist")}
                       style={{ cursor: "pointer" }}
-                      onClick={() => handleLogin("/auth/anunciar")}
+                      // onClick={() => handleLogin("/auth/wishlist")}
                     >
-                      Carrinho
+                      Lista de Desejo
                   </span>
                   </NavItem>
                 )}
               <NavItem>
-                <a onClick={() => history.push("/auth/throw")}>
+                <Link to={"/auth/throw"}>
                   <span className={getActiveItem("/auth/throw")}>
                     Perfil
                   </span>
-                </a>
+                </Link>
               </NavItem>
             </Nav>
             <Nav className="d-flex">
