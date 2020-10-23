@@ -171,9 +171,6 @@ export default function WishList() {
               <InputGroupAddon addonType="append">
                 <InputGroupText><i className="fa fa-search"></i></InputGroupText>
               </InputGroupAddon>
-              <i md={12}
-              className="fa fa-search">
-              </i>
             </InputGroup>
           </FormGroup>
           </Col>
@@ -195,9 +192,6 @@ export default function WishList() {
                     <CardText>
                       Descrição da disciplina etc...
                     </CardText>
-                    <CardText>
-                      <small className="text-muted">R$ 000,00</small>
-                    </CardText>
                   </CardBody>
                 </Card>
                 <Card>
@@ -216,9 +210,6 @@ export default function WishList() {
                     </CardText>
                     <CardText>
                       Descrição da disciplina etc...
-                    </CardText>
-                    <CardText>
-                      <small className="text-muted">R$ 000,00</small>
                     </CardText>
                   </CardBody>
                 </Card>
@@ -239,9 +230,6 @@ export default function WishList() {
                     <CardText>
                       Descrição da disciplina etc...
                     </CardText>
-                    <CardText>
-                      <small className="text-muted">R$ 000,00</small>
-                    </CardText>
                   </CardBody>
                 </Card>
                 <Card>
@@ -260,9 +248,6 @@ export default function WishList() {
                     </CardText>
                     <CardText>
                       Descrição da disciplina etc...
-                    </CardText>
-                    <CardText>
-                      <small className="text-muted">R$ 000,00</small>
                     </CardText>
                   </CardBody>
                 </Card> 
