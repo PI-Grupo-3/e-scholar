@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import {
-  Row, Col, Card, CardImg, CardBody, CardFooter,
+  Row, Col, Card, CardImg, CardBody, CardFooter, Button
 } from "reactstrap";
 
 const CardDiscipline = ({ discipline, premium, icon }) => {
@@ -54,7 +54,10 @@ const CardDiscipline = ({ discipline, premium, icon }) => {
             </p>
           </Col>
           <Col>
-            <i className={icon}></i>
+          <Button>
+            <i className={icon}>
+            </i>
+          </Button>
           </Col>
         </Row>
         <Row>

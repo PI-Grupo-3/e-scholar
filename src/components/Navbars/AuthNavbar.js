@@ -180,9 +180,10 @@ export default function AdminNavbar() {
                 </NavItem>
               ) : (
                 <NavItem>
-                  <i
+                  <Button
+                    className="btn-icon btn-3" color="primary" type="button"
                     className="fa fa-shopping-cart">
-                  </i>
+                  </Button>
                   <Button
                     className="btn-neutral btn-icon"
                     color="default"
