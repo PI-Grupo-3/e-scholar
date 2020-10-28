@@ -101,8 +101,8 @@ export default function AdminNavbar() {
                 </NavItem>
               )}
               <NavItem>
-                <Link to="/auth/throw">
-                  <span className={getActiveItem("/auth/throw")}>
+                <Link to="/auth/profile">
+                  <span className={getActiveItem("/auth/profile")}>
                     Perfil
                   </span>
                 </Link>
