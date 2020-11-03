@@ -136,7 +136,7 @@ export default function AdminNavbar() {
                       {" "}
                       {authUser}
                       {" "}
-&nbsp;
+                      &nbsp;
                     </DropdownToggle>
                     <DropdownMenu right className="text-center shadow-sm">
                       <DropdownItem
@@ -187,6 +187,12 @@ export default function AdminNavbar() {
                 </NavItem>
               ) : (
                 <NavItem>
+                  <Button
+                    className="btn-icon btn-3 fa fa-shopping-cart" 
+                    color="primary" 
+                    type="button"   
+                  >
+                  </Button>
                   <Button
                     className="btn-neutral btn-icon"
                     color="default"

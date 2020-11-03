@@ -4,6 +4,8 @@ import MinhasDisciplinas from "views/pages/MinhasDisciplinas";
 import HistCompras from "views/pages/HistCompras";
 import Profile from "views/pages/Profile"
 import ShoppingCart from "views/pages/ShoppingCart"
+import Login from "views/pages/Login";
+import Cadastro from "views/pages/Cadastro";
 
 const routes = [
   {
@@ -48,6 +50,20 @@ const routes = [
         component: ShoppingCart,
         layout: "/auth",
       },
+      {
+        path: "/login",
+        name: "Login",
+        icon: "ni ni-key-25 text-info",
+        component: Login,
+        layout: "/auth"
+      },
+      {
+        path: "/register",
+        name: "Register",
+        icon: "ni ni-circle-08 text-pink",
+        component: Cadastro,
+        layout: "/auth"
+      }
     ],
   },
 ];
