@@ -35,7 +35,7 @@ export default function Profile (){
     setDisplines(allowedState);
   }, []);
     return (
-        <Container className="mt-5">
+        <Container className="mt-3">
           <Row>
             <Col lg="3" md="4">
               <CardProfile profile={displines} />
@@ -46,41 +46,41 @@ export default function Profile (){
                     Dados Pessoais
                   </h3>
                     <Input
-                    className='mb-2'
-                        placeholder='Nome Completo'
-                        type='text'
+                      className='mb-2'
+                      placeholder='Nome Completo'
+                      type='text'
                      />
                     <Input
                       className= 'mb-2'
                       placeholder='Como deseja ser chamado(a)'
                       type='text'
                      />
-                    <Input
+                    <Input maxLength='14'
                       className= 'mb-2'
                       placeholder='CPF'
-                      type='number'
-                      />
-                    <Input
-                      className= 'mb-2'
-                      placeholder='E-mail'
-                      type='email'
+                      type='text'
                       />
                     <Row>
                       <Col>
                         <Input
                           className= 'mb-2'
                           placeholder='Data de nascimento'
-                          type='birthday'
+                          type='date'
                         />
                       </Col>
                       <Col>
-                        <Input
+                        <Input maxLength='14'
                           className= 'mb-2'
                           placeholder='Telefone/Whatsapp'
                           type='tel'
                          />
                       </Col>
                     </Row>
+                    <Input
+                      className= 'mb-2'
+                      placeholder='E-mail'
+                      type='email'
+                      />
                     <Input
                       className= 'mb-2'
                       placeholder='Rua'
@@ -114,9 +114,9 @@ export default function Profile (){
                       />
                     <Row>
                       <Col>
-                        <Input
+                        <Input maxLength='10'
                           className= 'mb-2'
-                          placeholder='Cep'
+                          placeholder='CEP'
                           type='text'
                         />
                       </Col>

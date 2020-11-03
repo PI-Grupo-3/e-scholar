@@ -3,6 +3,7 @@ import WishList from "views/pages/WishList";
 import MinhasDisciplinas from "views/pages/MinhasDisciplinas";
 import HistCompras from "views/pages/HistCompras";
 import Profile from "views/pages/Profile"
+import ShoppingCart from "views/pages/ShoppingCart"
 
 const routes = [
   {
@@ -39,6 +40,12 @@ const routes = [
         path: "/profile",
         name: "Perfil",
         component: Profile,
+        layout: "/auth",
+      },
+      {
+        path: "/shoppingcart",
+        name: "Carrinho de Compras",
+        component: ShoppingCart,
         layout: "/auth",
       },
     ],

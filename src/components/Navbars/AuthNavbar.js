@@ -107,6 +107,13 @@ export default function AdminNavbar() {
                   </span>
                 </Link>
               </NavItem>
+              <NavItem>
+                <Link to="/auth/shoppingcart">
+                  <span className={getActiveItem("/auth/shoppingcart")}>
+                    Carrinho de Compras
+                  </span>
+                </Link>
+              </NavItem>
             </Nav>
             <Nav className="d-flex">
               {token ? (
