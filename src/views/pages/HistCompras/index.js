@@ -78,15 +78,11 @@ export default function HistCompras() {
               </FormGroup>
             </Col>
             <Col lg="8">
-
-
-                  {discipline.map(item => (
-                    <Row>
-                      <CardDiscipline discipline={item} />
-                    </Row>
-                  ))}
-
-
+              {discipline.map(item => (
+                <Row>
+                  <CardDiscipline discipline={item} />
+                </Row>
+              ))}
             </Col>
           </Col>
         </Row>

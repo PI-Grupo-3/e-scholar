@@ -4,7 +4,7 @@ import {
   Row, Col, Card, CardImg, CardBody, CardFooter, Button
 } from "reactstrap";
 
-const CardDiscipline = ({ discipline, premium, icon, wishlist }) => {
+const CardDiscipline = ({ discipline, premium, icon, wishlist, about }) => {
   const history = useHistory();
 
   async function handleOpenAd(id) {
@@ -57,12 +57,10 @@ const CardDiscipline = ({ discipline, premium, icon, wishlist }) => {
                     {discipline.name}
                   </p>
                 </Col>
-                {icon && (
+                {wishlist && (
                   <Col>
-                  <Button>
-                    <i className={icon}>
+                    <i className="fa fa-heart text-danger">
                     </i>
-                  </Button>
                   </Col>
                 )}
               </Row>
@@ -88,6 +86,11 @@ const CardDiscipline = ({ discipline, premium, icon, wishlist }) => {
                   {discipline.price}
                 </span>
               </Row>
+              {about && (
+                <span>
+                  Texto super foda que tem quec caspi
+                </span>
+              )}
             </CardBody>
             {wishlist && (
               <CardFooter
