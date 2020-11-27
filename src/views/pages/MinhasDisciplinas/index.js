@@ -22,12 +22,9 @@ export default function MyDisciplines() {
   const token = localStorage.getItem('token');
 
   async function getDiscipline() {
-    const {data} = await api.get("purchase/getHist/1", {
-      headers:{
-        Authorization:`Bearer ${token}`
-      }}
-    )
+    const {data} = await api.get("purchase/getHist/1")
     setDisciplines(data)
+    console.log(data);
   }
 
   useEffect(() => {

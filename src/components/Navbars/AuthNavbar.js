@@ -22,7 +22,6 @@ import api from '../../services/api'
 
 export default function AdminNavbar() {
   const [authUser, setAuthUser] = useState("");
-  // const [token, setToken] = useState("");
   const [dropdownOpen, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
@@ -35,12 +34,9 @@ export default function AdminNavbar() {
   const toggle2 = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    // setToken(localStorage.getItem("token"));
     async function getUserName() {
       if (token) {
-        const response = await api.get('/clientAuth/getUser', {
-          headers: { Authorization: `Bearer ${token}`}
-        })
+        const response = await api.get('/clientAuth/getUser')
         setAuthUser(response.data.name);
       }
     }
@@ -50,7 +46,6 @@ export default function AdminNavbar() {
   async function handleLogin(redirect) {
     setPath(redirect);
     setModal(!modal);
-    // setToken();
     setAuthUser();
   }
 

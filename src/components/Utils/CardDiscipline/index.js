@@ -33,9 +33,9 @@ const CardDiscipline = ({ discipline, premium, icon, wishlist, about }) => {
           >
             <CardImg
               id="background"
-              className={discipline.uri ? "has-background" : ""}
+              className={discipline.image ? "has-background" : ""}
               style={{
-                backgroundImage: `url(${discipline.uri})`,
+                backgroundImage: `url(${discipline.image})`,
                 height: 200,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",

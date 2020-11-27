@@ -51,12 +51,7 @@ export default function Profile (){
   ];
 
   async function getUser() {
-    const response = await api.get('clientAuth/getUser', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-
-    })
+    const response = await api.get('clientAuth/getUser')
     console.log(response.data)
     setName(response.data.name)
     setCity(response.data.city)
@@ -90,11 +85,7 @@ export default function Profile (){
       state
 
     }
-    const response = await api.put('clientAuth/update/1', data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+    const response = await api.put('clientAuth/update/1', data)
   }
 
   useEffect(() => {
