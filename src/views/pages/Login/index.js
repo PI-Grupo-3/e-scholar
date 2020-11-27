@@ -69,6 +69,7 @@ export default function Login() {
         localStorage.removeItem('remember');
       }
       localStorage.setItem('token', token);
+
       history.push('/');
     } catch (error) {
       console.log(error);

@@ -43,7 +43,6 @@ const CardDiscipline = ({ discipline, premium, icon, wishlist, about }) => {
             />
             <CardBody
               className="text text-left mb--5"
-              onClick={() => handleOpenAd(discipline.id)}
             >
               <div style={{ height: 28 }} />
               <Row>

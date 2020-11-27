@@ -19,6 +19,8 @@ import api from "../../../services/api"
 export default function WishList() {
   const [disciplines, setDisciplines] = useState([]);
   const [w, setW] = useState("");
+  const token = localStorage.getItem('token');
+
   const allowedState = [
     {
       id: 1, name: "Português: Pontuação", icon:"fa fa-heart", alunos: 59, lucro: 299.00, uri: "https://s3.amazonaws.com/midia.korntraducoes.com.br/wp-content/uploads/2018/06/14103621/Depositphotos_68180183_original.jpg",
@@ -38,7 +40,6 @@ export default function WishList() {
   ];
 
   async function getWishlist() {
-    const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjQsImlhdCI6MTYwNDY4MjQwMSwiZXhwIjoxNjA1NTQ2NDAxfQ.N0LsXm5KOfJH1ZnmBtuqekCLwVw_smQ0QDeSss3oE0o"
     const {data} = await api.get("purchase/getHist/1", {
       headers:{
         Authorization:`Bearer ${token}`
@@ -76,7 +77,7 @@ export default function WishList() {
             </Col>
             <Col lg="8">
               {disciplines.map(item => (
-                <Row>
+                <Row className="mb-4">
                   <CardDiscipline
                     wishlist
                     discipline={item} />

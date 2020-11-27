@@ -90,7 +90,7 @@ export default function AdminNavbar() {
                   </span>
                 </Link>
               </NavItem>
-              {token && (
+              {/* {token && (
                 <>
                   <NavItem>
                     <Link to="/auth/mydiscipline">
@@ -106,15 +106,8 @@ export default function AdminNavbar() {
                       </span>
                     </Link>
                   </NavItem>
-                  <NavItem>
-                    <Link to="/auth/profile">
-                      <span className={getActiveItem("/auth/profile")}>
-                        Perfil
-                      </span>
-                    </Link>
-                  </NavItem>
                 </>
-              )}
+              )} */}
             </Nav>
             <Nav className="d-flex">
               <Button
@@ -151,24 +144,8 @@ export default function AdminNavbar() {
                         style={{ cursor: "pointer" }}
                         onClick={() => history.push("/auth/profile")}
                       >
-                        <div style={{ fontWeight: 575, color: "#505051" }}>
+                        <div style={{ fontWeight: 575, color: "#3C64B1" }}>
                           Meu Perfil
-                        </div>
-                      </DropdownItem>
-                      <DropdownItem
-                        style={{ cursor: "pointer" }}
-                        onClick={() => history.push("/auth/profile")}
-                      >
-                        <div style={{ fontWeight: 575, color: "#505051" }}>
-                          Meus Anúncios
-                        </div>
-                      </DropdownItem>
-                      <DropdownItem
-                        style={{ cursor: "pointer" }}
-                        onClick={() => history.push("/auth/wishlist")}
-                      >
-                        <div style={{ fontWeight: 575, color: "#505051" }}>
-                          Meus Lances
                         </div>
                       </DropdownItem>
                       <DropdownItem
@@ -179,6 +156,23 @@ export default function AdminNavbar() {
                           Lista de Desejos
                         </div>
                       </DropdownItem>
+                      <DropdownItem
+                        style={{ cursor: "pointer" }}
+                        onClick={() => history.push("/auth/mydiscipline")}
+                      >
+                        <div style={{ fontWeight: 575, color: "#3C64B1" }}>
+                          Minhas Disciplinas
+                        </div>
+                      </DropdownItem>
+                      <DropdownItem
+                        style={{ cursor: "pointer" }}
+                        onClick={() => history.push("/auth/hist")}
+                      >
+                        <div style={{ fontWeight: 575, color: "#3C64B1" }}>
+                          Histórico de compras
+                        </div>
+                      </DropdownItem>
+
                       <DropdownItem divider />
                       <DropdownItem
                         onClick={logout}
@@ -211,14 +205,12 @@ export default function AdminNavbar() {
                   </NavItem>
                   <NavItem>
                     <Button
-                      className="ml-2 btn-neutral btn-icon bg-primary"
-                      color="default"
+                      className="ml-2"
+                      color="primary"
+                      outline
+                      type="button"
                       onClick={() => history.push("/auth/register")}
-                      style={{
-                        border: 0,
-                        color: "#fff",
-                      }}
-                      >
+                    >
                       <span className="nav-link-inner--text">CADASTRAR</span>
                   </Button>
                   </NavItem>

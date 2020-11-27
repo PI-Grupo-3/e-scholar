@@ -28,9 +28,10 @@ export default function Profile (){
   const [number, setNumber] = useState('')
   const [state, setState] = useState('')
   const [zipCode, setZipCode] = useState('')
+  const token = localStorage.getItem('token');
 
 
-    const allowedState = [
+  const allowedState = [
     {
       id: 1, name: "Português: Pontuação", alunos: 59, lucro: 299.00, uri: "https://s3.amazonaws.com/midia.korntraducoes.com.br/wp-content/uploads/2018/06/14103621/Depositphotos_68180183_original.jpg",
     },
@@ -50,7 +51,6 @@ export default function Profile (){
   ];
 
   async function getUser() {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjQsImlhdCI6MTYwNDY3OTE3NywiZXhwIjoxNjA1NTQzMTc3fQ.MFgNCF8iT3nsNF2j1OWv0F78HqONIsbJ20D4WC92By0'
     const response = await api.get('clientAuth/getUser', {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -76,8 +76,6 @@ export default function Profile (){
   async function handleUpdate(e){
     e.preventDefault()
 
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjQsImlhdCI6MTYwNDY3OTE3NywiZXhwIjoxNjA1NTQzMTc3fQ.MFgNCF8iT3nsNF2j1OWv0F78HqONIsbJ20D4WC92By0'
-
     const data = {
       name,
       city,
@@ -93,14 +91,10 @@ export default function Profile (){
 
     }
     const response = await api.put('clientAuth/update/1', data, {
-
       headers: {
         Authorization: `Bearer ${token}`,
       },
-
     })
-
-    console.log(response.data)
   }
 
   useEffect(() => {

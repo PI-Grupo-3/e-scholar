@@ -59,7 +59,7 @@ export default function MyDisciplines() {
             </Col>
             <Col lg="8">
               {disciplines.map(item => (
-                <Row>
+                <Row className="mb-4">
                   <CardDiscipline discipline={item} />
                 </Row>
               ))}

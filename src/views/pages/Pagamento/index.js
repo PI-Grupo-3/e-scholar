@@ -1,17 +1,3 @@
-// import React, { useState } from "react";
-// import { Link, useHistory } from "react-router-dom";
-
-
-
-
-
-
-// const history = useHistory();
-// <Link to="/">
-//     <span className={getActiveItem("/")}>
-//       Página Inicial
-//         </span>
-//    </Link>
 import React, { useState, useEffect } from "react";
 
 import {
@@ -57,10 +43,10 @@ export default function Home() {
                  <>
                   <div className="custom-control custom-radio mb-3">
                   <input
-                   className="custom-control-input"
-                  id="customRadio1"
-                   name="customRadio"
-                  type="radio"
+                    className="custom-control-input"
+                    id="customRadio1"
+                    name="customRadio"
+                    type="radio"
                   />
                   <label className="custom-control-label" htmlFor="customRadio1">
                   Utilizar o endereço residencial
@@ -68,10 +54,10 @@ export default function Home() {
                  </div>
                  <div className="custom-control custom-radio">
                  <input
-                 className="custom-control-input"
-                 id="customRadio2"
+                  className="custom-control-input"
+                  id="customRadio2"
                   name="customRadio"
-                type="radio"
+                  type="radio"
                 />
                  <label className="custom-control-label mb-4" htmlFor="customRadio2">
                   Informar outro endereço
@@ -85,20 +71,20 @@ export default function Home() {
                   <div className="custom-control custom-radio mb-3">
                    <input
                     className="custom-control-input"
-                  id="customRadio3"
-                  name="customRadio"
-                 type="radio"
-                />
+                    id="customRadio3"
+                    name="payment"
+                    type="radio"
+                  />
                 <label className="custom-control-label" htmlFor="customRadio3">
                  Boleto bancário
                  </label>
                 </div>
                 <div className="custom-control custom-radio">
                <input
-              className="custom-control-input"
-              id="customRadio4"
-              name="customRadio"
-              type="radio"
+                className="custom-control-input"
+                id="customRadio4"
+                name="payment"
+                type="radio"
               />
               <label className="custom-control-label mb-2" htmlFor="customRadio4">
                Cartão de crédito
@@ -110,16 +96,16 @@ export default function Home() {
                   <Row>
                     <Col>
                     <Input
-                    className= ' mb-2  mt-2'
-                    placeholder='Número do cartão'
-                    type='text'
+                      className= ' mb-2  mt-2'
+                      placeholder='Número do cartão'
+                      type='text'
                     />
                     </Col>
                     <Col>
                     <Input
-                    className= 'mt-2 mb-2'
-                    placeholder='CPF do titular'
-                    type='text'
+                      className= 'mt-2 mb-2'
+                      placeholder='CPF do titular'
+                      type='text'
                     />
                     </Col>
                   </Row>

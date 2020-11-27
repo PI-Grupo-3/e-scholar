@@ -19,9 +19,10 @@ export default function HistCompras() {
   const [user, setUser] = useState([]);
   const [discipline, setDiscipline] = useState([]);
   const [w, setW] = useState("");
+  const token = localStorage.getItem('token');
+
 
   async function getHist(){
-    const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjQsImlhdCI6MTYwNDY4MjQwMSwiZXhwIjoxNjA1NTQ2NDAxfQ.N0LsXm5KOfJH1ZnmBtuqekCLwVw_smQ0QDeSss3oE0o"
     const {data} = await api.get("purchase/getHist/1", {
       headers:{
         Authorization:`Bearer ${token}`
@@ -79,7 +80,7 @@ export default function HistCompras() {
             </Col>
             <Col lg="8">
               {discipline.map(item => (
-                <Row>
+                <Row className="mb-4">
                   <CardDiscipline discipline={item} />
                 </Row>
               ))}
