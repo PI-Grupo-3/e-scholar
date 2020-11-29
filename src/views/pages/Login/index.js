@@ -158,8 +158,7 @@ export default function Login() {
                     </a> */}
                     <a
                       className="text-blue"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
+                      onClick={e => history.push('/auth/register')}
                     >
                       <medium>Crie uma conta</medium>
                     </a>

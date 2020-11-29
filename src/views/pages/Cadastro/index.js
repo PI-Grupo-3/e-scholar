@@ -38,7 +38,7 @@ export default function Cadastro(){
       }
 
       if (password != confirmPassword) {
-        setError('As senhas não batem')
+        setError('As senhas digitadas estão diferentes')
         return
       }
       const response = await api.post('clientAuth/signUp', data)

@@ -38,6 +38,7 @@ export default function AdminNavbar() {
       if (token) {
         const response = await api.get('/clientAuth/getUser')
         setAuthUser(response.data.name);
+        localStorage.setItem('username', response.data.name);
       }
     }
     getUserName();
